@@ -1,4 +1,4 @@
-# Superheroic VueJS website
+# Omari VueJS website
 
 ## Build Setup
 
