@@ -15,3 +15,5 @@ src/firebase.config.js
 
 # Hatch specific stuff
 store-images/
+
+package-lock.json
