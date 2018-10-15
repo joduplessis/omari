@@ -3,8 +3,6 @@ import App from './App'
 import router from './router'
 import VueCarousel from 'vue-carousel'
 import VueProgressBar from 'vue-progressbar'
-import VueFire from 'vuefire'
-import Firebase from 'firebase'
 import moment from 'moment'
 import { markdown } from 'markdown'
 import { VueMasonryPlugin } from 'vue-masonry'
@@ -15,7 +13,6 @@ Vue.config.productionTip = false
 Vue.use(VueMasonryPlugin)
 Vue.use(VueCarousel)
 Vue.use(VTooltip)
-Vue.use(VueFire)
 Vue.use(VueProgressBar, {
   color: '#bffaf3',
   failedColor: '#874b4b',

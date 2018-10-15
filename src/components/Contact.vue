@@ -40,8 +40,7 @@
 </template>
 
 <script>
-import { db } from '../firebase';
-import items from '../work.json';
+
 
 export default {
   name: 'about'

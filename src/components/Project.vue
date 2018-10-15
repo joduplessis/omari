@@ -1,76 +1,69 @@
 <template>
-
     <section class="section">
-      <div class="container">
-
-
-        <router-link to="/" class="goback">
-          <span>
-            <img src="../assets/arrow-left.svg" height="20"/> Go back
-          </span>
-        </router-link>
-        <br class="clearfix"/>
-        <br class="clearfix"/>
-        <div class="panels">
-          <div class="panel">
-            <img v-for="(item, index) in getFirstElement(item).images" :src="getImageUrl(item)" v-if="index!=0"/>
-          </div>
-          <div class="panel">
-            <div class="padding">
-              <div class="year">
-                {{getFirstElement(item).year}}
-                <span v-if="getFirstElement(item).partner!=''"> • {{getFirstElement(item).partner}}</span>
-              </div>
-              <div class="title">{{getFirstElement(item).project}}</div>
-              <span v-for="(role, index) in getFirstElement(item).roles" class="tag is-primary">{{role.toUpperCase()}}</span>
-              <div class="notes">{{getFirstElement(item).notes}}</div>
-              <span v-for="(tag, index) in getFirstElement(item).tags" class="tag is-light">{{tag}}</span>
-              <br class="clearfix"/>
-              <span v-if="getFirstElement(item).links[0]" v-for="(link, index) in getFirstElement(item).links">
-                <a v-bind:href="link" target="_blank" class="tag is-light">{{link}}</a>
-              </span>
+        <div class="container">
+            <router-link class="goback" to="/">
+                <span>
+                    <img height="20" src="../assets/arrow-left.svg"/>
+                    Go back
+                </span>
+            </router-link>
+            <br class="clearfix"/>
+            <br class="clearfix"/>
+            <div class="panels">
+                <div class="panel">
+                    <img :src="getImageUrl(item)" v-for="(item, index) in getFirstElement(item).images" v-if="index!=0"/>
+                </div>
+                <div class="panel">
+                    <div class="padding">
+                        <div class="year">
+                            {{getFirstElement(item).year}}
+                            <span v-if="getFirstElement(item).partner!=''">
+                                • {{getFirstElement(item).partner}}
+                            </span>
+                        </div>
+                        <div class="title">
+                            {{getFirstElement(item).project}}
+                        </div>
+                        <span class="tag is-primary" v-for="(role, index) in getFirstElement(item).roles">
+                            {{role.toUpperCase()}}
+                        </span>
+                        <div class="notes">
+                            {{getFirstElement(item).notes}}
+                        </div>
+                        <span class="tag is-light" v-for="(tag, index) in getFirstElement(item).tags">
+                            {{tag}}
+                        </span>
+                        <br class="clearfix"/>
+                        <span v-for="(link, index) in getFirstElement(item).links" v-if="getFirstElement(item).links[0]">
+                            <a class="tag is-light" target="_blank" v-bind:href="link">
+                                {{link}}
+                            </a>
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
+            <br class="clearfix"/>
         </div>
-
-
-
-        <br class="clearfix"/>
-
-
-      </div>
     </section>
-
 </template>
-
 <script>
-import { db } from '../firebase';
-import items from '../work.json';
+    const items = require('../work.json');
 
 export default {
-  name: 'work',
-  data: function() {
-    const { slug } = this.$route.params;
+	name: 'work',
+	data: function() {
+		const { slug } = this.$route.params;
 
-    return {
-      item: items.project.filter((obj, index) => {
-        return obj.slug == slug;
-      }),
-    }
-  }
-  /*
-  firebase() {
-    return {
-      item: db.ref('project').orderByChild('slug').equalTo(this.$route.params.slug)
-    }
-  },
-  */
+		return {
+			item: items.project.filter((obj, index) => {
+				return obj.slug == slug;
+			}),
+		}
+	}
 }
 </script>
-
-
-<style scoped>
-  a.goback img {
+<style scoped="">
+    a.goback img {
     height: 15px;
     width: 15px;
     position: relative;
