@@ -14,10 +14,22 @@
         <div class="navbar-item"><router-link :to="{ name: 'Home'}" class="navbar-item"><span>Home</span></router-link></div>
         <div class="navbar-item"><router-link :to="{ name: 'About'}" class="navbar-item"><span>About</span></router-link></div>
         <div class="navbar-item"><router-link :to="{ name: 'Expertise'}" class="navbar-item"><span>Expertise</span></router-link></div>
-        <div class="navbar-item"><router-link :to="{ name: 'Contact'}" class="navbar-item"><span>Contact</span></router-link></div>
+
+
+		<div class="navbar-item"><a href="mailto:hello@omari.studio" target="_blank" class="navbar-item outbound"><span>hello@omari.studio</span></a></div>
+		<div class="navbar-item"><a href="tel:+27814393685" target="_blank" class="navbar-item outbound"><span>+27 81 439 3685</span></a></div>
+
+		<!--
+
+		<div class="navbar-item"><router-link :to="{ name: 'Contact'}" class="navbar-item"><span>Contact</span></router-link></div>
+		<div class="navbar-item"><router-link :to="{ name: 'Project', params: { slug: 'yack' }}" class="navbar-item outbound"><span>Yack</span></router-link></div>
+		<div class="navbar-item"><router-link :to="{ name: 'Project', params: { slug: 'chow-new' }}" class="navbar-item outbound"><span>Chow</span></router-link></div>
+		<div class="navbar-item"><router-link :to="{ name: 'Project', params: { slug: 'playfirst' }}" class="navbar-item outbound"><span>Playfirst</span></router-link></div>
+
         <div class="navbar-item"><a href="https://playfirst.omari.studio" target="_blank" class="navbar-item outbound"><span>Playfirst</span></a></div>
         <div class="navbar-item"><a href="https://yack.app" target="_blank" class="navbar-item outbound"><span>Yack</span></a></div>
         <div class="navbar-item"><a href="https://chow.solutions" target="_blank" class="navbar-item outbound"><span>Chow</span></a></div>
+		-->
       </div>
     </nav>
 

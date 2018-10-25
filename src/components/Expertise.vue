@@ -19,7 +19,7 @@
                         E-commerce (development & strategy)
                     </div>
                     <div class="title" v-tooltip.center-center="frontend">
-                        Frontend & Javascript*
+                        Frontend & Javascript *
                     </div>
                     <div class="title">
                         Ruby on Rails & Python Django
